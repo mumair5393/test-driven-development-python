@@ -1,4 +1,4 @@
-from django.template.defaultfilters import time
+import time
 from selenium import webdriver
 import unittest
 
@@ -15,7 +15,7 @@ class NewUserTest(unittest.TestCase):
 
     def test_user_flow(self):
         # User visits the website and notices "To-Do" in the title
-        self.browser.get("http://localhost:5173")
+        self.browser.get("http://localhost:8000")
 
         # She notices the page title and header mention to-do lists
         self.assertIn("To-Do", self.browser.title)
@@ -34,7 +34,8 @@ class NewUserTest(unittest.TestCase):
         time.sleep(1)
         table = self.browser.find_element(By.ID, "id_list_table")
         rows = table.find_elements(By.TAG_NAME, "tr")
-        self.assertTrue(any(row.text == '1: Buy peacock feathers' for row in rows) )
+        self.assertTrue(any(row.text == '1: Buy peacock feathers' for row in rows),"New to-do item did not appear in table"
+)
         
 
         # There is still a text box inviting her to add another item. She 
