@@ -15,7 +15,7 @@ class NewUserTest(unittest.TestCase):
 
     def test_user_flow(self):
         # User visits the website and notices "To-Do" in the title
-        self.browser.get("http://localhost:8000")
+        self.browser.get("http://localhost:5173")
 
         # She notices the page title and header mention to-do lists
         self.assertIn("To-Do", self.browser.title)
