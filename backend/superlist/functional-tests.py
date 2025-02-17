@@ -41,7 +41,7 @@ class NewUserTest(unittest.TestCase):
         # There is still a text box inviting her to add another item. She # enters "Use peacock feathers to make a fly" (Edith is very
         # methodical)
         input_box = self.browser.find_element(By.ID, 'id_new_item')
-        input_box.send_keys('Use peacock feathers to make a fly')
+        input_box.send_keys('Use peacock feathers to make a fly.')
         input_box.send_keys(Keys.ENTER)
         time.sleep(1)
         
